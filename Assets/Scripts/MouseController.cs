@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class MouseController : MonoBehaviour {
 
@@ -55,6 +56,8 @@ public class MouseController : MonoBehaviour {
 		if (!dead)
 		{
 			Vector2 newVelocity = rigidbody2D.velocity;
+			if(coins > 5 ) 
+			    forwardMovementSpeed = (float)Math.Sqrt(coins);
 			newVelocity.x = forwardMovementSpeed;
 			rigidbody2D.velocity = newVelocity;
 		}
